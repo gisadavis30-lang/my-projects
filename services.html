@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Davis</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* GLOBAL */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000000;
+      color: #e5e7eb;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    nav a.active,
+    nav a:hover {
+      opacity: 1;
+      color: #60a5fa;
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 20px;
+      animation: slideUp .8s ease;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .page-title span {
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-intro {
+      text-align: center;
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    /* SERVICE CARD */
+    .service-card {
+      background: #020617;
+      padding: 35px 30px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,.7);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 35px 80px rgba(37,99,235,.35);
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: #60a5fa;
+      margin-bottom: 20px;
+    }
+
+    .service-card h2 {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    /* BUTTON */
+    .service-card button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .service-card button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(37,99,235,.45);
+    }
+
+    /* HIDDEN CONTENT */
+    .service-more {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .service-more ul {
+      padding-left: 18px;
+    }
+
+    .service-more li {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    /* OPEN STATE */
+    .service-card.open .service-more {
+      max-height: 200px;
+    }
+
+    /* ANIMATION */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="home.html" class="logo">Davis</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="education.html">Education</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="services">
+
+  <h1 class="page-title">My <span>Services</span></h1>
+  <p class="page-intro">
+    What I can offer using my web development and design skills.
+  </p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <i class="fas fa-code"></i>
+      <h2>Web Development</h2>
+      <p>Clean, responsive, and modern websites.</p>
+      <button onclick="toggleService(this)">Learn More</button>
+      <div class="service-more">
+        <ul>
+          <li>✔ Responsive layouts</li>
+          <li>✔ Clean code structure</li>
+          <li>✔ Cross-browser support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-paint-brush"></i>
+      <h2>UI / UX Design</h2>
+      <p>User-focused and visually appealing designs.</p>
+      <button onclick="toggleService(this)">Learn More</button>
+      <div class="service-more">
+        <ul>
+          <li>✔ Modern layouts</li>
+          <li>✔ Color & typography</li>
+          <li>✔ User experience focus</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-mobile-alt"></i>
+      <h2>Responsive Design</h2>
+      <p>Perfect experience on all devices.</p>
+      <button onclick="toggleService(this)">Learn More</button>
+      <div class="service-more">
+        <ul>
+          <li>✔ Mobile-first approach</li>
+          <li>✔ Flexible layouts</li>
+          <li>✔ Performance optimized</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <i class="fas fa-tools"></i>
+      <h2>Website Maintenance</h2>
+      <p>Updates, fixes, and improvements.</p>
+      <button onclick="toggleService(this)">Learn More</button>
+      <div class="service-more">
+        <ul>
+          <li>✔ Bug fixes</li>
+          <li>✔ Content updates</li>
+          <li>✔ Speed optimization</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleService(btn) {
+    const card = btn.parentElement;
+    card.classList.toggle("open");
+  }
+</script>
+
+</body>
+</html>
