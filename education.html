@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education | Davis</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* GLOBAL */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000000;
+      color: #e5e7eb;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    nav a.active,
+    nav a:hover {
+      opacity: 1;
+      color: #60a5fa;
+    }
+
+    /* EDUCATION SECTION */
+    .education {
+      max-width: 1000px;
+      margin: auto;
+      padding: 100px 20px;
+      animation: slideUp .8s ease;
+    }
+
+    .page-title {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .page-title span {
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-intro {
+      text-align: center;
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 60px;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* CARD */
+    .edu-card {
+      background: #020617;
+      border-radius: 20px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.7);
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 35px 80px rgba(37,99,235,.35);
+    }
+
+    /* HEADER */
+    .edu-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 25px 30px;
+      cursor: pointer;
+    }
+
+    .edu-header h2 {
+      flex: 1;
+      font-size: 1.6rem;
+    }
+
+    .edu-header span {
+      font-weight: 600;
+      color: #60a5fa;
+    }
+
+    .edu-header i {
+      font-size: 1.5rem;
+      color: #3b82f6;
+    }
+
+    .arrow {
+      transition: transform .3s ease;
+    }
+
+    /* CONTENT */
+    .edu-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 30px;
+      transition: max-height .5s ease;
+    }
+
+    .edu-content p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+
+    .edu-content ul {
+      padding-left: 18px;
+    }
+
+    .edu-content li {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    /* OPEN STATE */
+    .edu-card.open .edu-content {
+      max-height: 500px;
+      padding-bottom: 25px;
+    }
+
+    .edu-card.open .arrow {
+      transform: rotate(180deg);
+    }
+
+    /* ANIMATION */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2.4rem;
+      }
+
+      .edu-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="home.html" class="logo">Davis</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="education.html" class="active">Education</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="education">
+
+  <h1 class="page-title">My <span>Education</span></h1>
+  <p class="page-intro">
+    My academic journey and the skills I have gained along the way.
+  </p>
+
+  <div class="timeline">
+
+    <div class="edu-card">
+      <div class="edu-header" onclick="toggleEdu(this)">
+        <i class="fas fa-school"></i>
+        <h2>Secondary School</h2>
+        <span>2021 – Present</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </div>
+      <div class="edu-content">
+        <p>
+          I am currently studying secondary education with a strong focus on
+          science and technology subjects.
+        </p>
+        <ul>
+          <li>✔ Computer Studies</li>
+          <li>✔ Mathematics</li>
+          <li>✔ Physics</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-header" onclick="toggleEdu(this)">
+        <i class="fas fa-laptop-code"></i>
+        <h2>Web Development Training</h2>
+        <span>2023 – Present</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </div>
+      <div class="edu-content">
+        <p>
+          Learned web development through self-study and hands-on projects,
+          focusing on modern frontend technologies.
+        </p>
+        <ul>
+          <li>✔ HTML & CSS</li>
+          <li>✔ JavaScript Basics</li>
+          <li>✔ Responsive Design</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-header" onclick="toggleEdu(this)">
+        <i class="fas fa-certificate"></i>
+        <h2>Online Courses</h2>
+        <span>2024</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </div>
+      <div class="edu-content">
+        <p>
+          Completed online courses to strengthen frontend development
+          and UI / UX design skills.
+        </p>
+        <ul>
+          <li>✔ Web Design Principles</li>
+          <li>✔ UI / UX Basics</li>
+          <li>✔ Project-Based Learning</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleEdu(header) {
+    const card = header.parentElement;
+    card.classList.toggle("open");
+  }
+</script>
+
+</body>
+</html>
